@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#19252d"><title>Suncat · Games, Music & Stories</title><meta name="description" content="Visit Suncat’s studio. Explore games, musical projects, favorite stories, and the worlds behind them."><meta property="og:title" content="Suncat Studio"><meta property="og:description" content="Games, music, and stories from Suncat. Come in and look around."><meta property="og:type" content="website">
-<!-- Suncat Studio v7.1 — standalone personal website.
+<!-- Suncat Studio v10.3.1 — standalone personal website.
 Open this file directly, or rename it index.html for GitHub Pages.
 All graphics, scripts, styles, and fonts use local or embedded resources.
 Only the music and Instagram buttons link away from the website.
@@ -224,7 +224,7 @@ noscript{position:fixed;inset:0;z-index:200;background:#102128;padding:10vh 8vw;
 
 .view-host>.empty-chart.host,.view-guest>.empty-chart.guest{display:flex}
 
-/* Pass 7: scoped to charts, results and the adventure. The lyre styles are unchanged. */
+/* Charts and result dialogs. The lyre styles are unchanged. */
 #chartDialog .overlay-head{position:sticky;top:-24px;background:#10232b;z-index:2;padding:12px 0;border-bottom:1px solid #bfa57833}
 #chartDialog .chart-toolbar>label{flex:1;min-width:145px}#chartDialog .chart-toolbar>button{min-height:44px}
 #chartDialog .chart-options{margin:16px 0 0;border-block:1px solid #bfa57833;padding:8px 0}#chartDialog .chart-options>summary{font-size:14px}
@@ -245,22 +245,13 @@ noscript{position:fixed;inset:0;z-index:200;background:#102128;padding:10vh 8vw;
 #chartDialog[inert],#chatDialog[inert]{pointer-events:none}#chatDialog #personalQuestionList{max-height:155px}
 @media(max-width:760px){#chartDialog .overlay-head{top:-17px}#chartResult{inset:auto 0 0;max-height:94vh;max-height:94dvh;border-radius:18px 18px 0 0;padding:20px 20px max(20px,env(safe-area-inset-bottom));overscroll-behavior:contain}#chartResult .overlay-head{top:-20px}#chartResult .overlay-head h1{font-size:28px}#chartResult .chart-detail p,#chartResult #readingOutput{font-size:15px}#chartDialog .chart-questions .connection-button{grid-column:auto;justify-self:end}#chartDialog .chart-questions .settings-row{grid-template-columns:1fr auto}}
 
-#adventureDialog{z-index:65;inset:4vh max(18px,calc((100vw - 760px)/2));background:#11262e;box-shadow:0 0 0 100vmax #061115c0,0 20px 80px #0008}
-#adventureDialog .overlay-head{position:sticky;top:-24px;padding:10px 0;background:#11262e;z-index:3;border-bottom:1px solid #bfa57833}
-#adventureDialog #adventureTitle{font-size:32px;outline:none}#adventureDialog #adventureBody{max-width:620px;margin:auto;font-size:16px;line-height:1.8}#adventureDialog #adventureBody p{line-height:1.8}#adventureDialog #adventureBody h2{font-size:34px;color:#e6c68f}
-#adventureDialog .journey-landscape{height:135px;position:relative;overflow:hidden;border:1px solid #af956c66;border-radius:5px;background:linear-gradient(#202f42,#967d78 85%,#c3a27e);isolation:isolate;margin:14px 0 22px}
-#adventureDialog .journey-sun{position:absolute;left:65%;top:24px;width:29px;height:29px;border-radius:50%;background:#f5d1a2;box-shadow:0 0 35px #f5d1a233}
-#adventureDialog .journey-hill{position:absolute;bottom:-50px;left:-8%;height:115px;width:80%;background:#3b5657;transform:rotate(-16deg);border-radius:50% 60% 0 0}
-#adventureDialog .journey-hill.near{left:35%;bottom:-65px;background:#19353e;transform:rotate(15deg);height:135px}
-#adventureDialog .journey-path{position:absolute;width:15px;height:100px;left:50%;bottom:-35px;transform:rotate(28deg);background:#b1956c99;border-radius:70%}
-#adventureDialog .journey-window{position:absolute;inset:0;box-shadow:inset 12px 0 #887457,inset -12px 0 #887457,inset 0 7px #a38a68,inset 0 -7px #a38a68}
-#adventureDialog .journey-window:after{content:'';position:absolute;left:50%;top:0;height:100%;width:5px;background:#a38a68}
-#adventureDialog .adventure-choices{display:grid;grid-template-columns:1fr;gap:10px;margin:24px 0}#adventureDialog .adventure-choices button{min-height:52px;text-align:left;padding:14px 18px;font-size:14px;background:#203940;border-color:#c4a97966}
-#adventureDialog .adventure-choices button:hover{background:#314940;border-color:#dfbd82}#adventureDialog .adventure-choices button:focus-visible{outline:2px solid #dfbd82;outline-offset:3px}
-#adventureDialog .adventure-footer{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding-top:18px;border-top:1px solid #bfa57833}#adventureDialog .adventure-footer p{flex-basis:100%;margin:5px 0}
-#adventureDialog .journey-evidence{padding-left:20px;font-size:14px;line-height:1.8}#adventureDialog .journey-outcome{border-left:2px solid #d4b17b;padding-left:16px;color:#cfccc0}
-#adventureDialog .journey-note{font-size:13px;color:#b9c5bb}#adventureDialog .journey-reading{padding:4px 0 14px}#adventureDialog .journey-reading strong{color:#dabe87}
-@media(max-width:760px){#adventureDialog{inset:8px;padding:20px}#adventureDialog .overlay-head{top:-20px}#adventureDialog #adventureTitle{font-size:28px}#adventureDialog .journey-landscape{height:110px}#adventureDialog #adventureBody{font-size:15px}}
+.welcome-art .orbit-line{z-index:0}.welcome-cat{position:relative;z-index:2}.welcome-art .sun-disc{z-index:0}.welcome-butterfly{transform-origin:300px 170px;animation:butterfly-travel 8s ease-in-out infinite}.welcome-wing{transform-box:fill-box;transform-origin:right center;animation:butterfly-wing .34s ease-in-out infinite alternate}.welcome-wing.right{transform-origin:left center;animation-delay:-.08s}@keyframes butterfly-wing{from{transform:scaleX(1)}to{transform:scaleX(.38)}}@keyframes butterfly-travel{0%,100%{transform:translate(0,0) rotate(-12deg)}25%{transform:translate(-8px,-22px) rotate(14deg)}46%{transform:translate(10px,-30px) rotate(-8deg)}65%{transform:translate(23px,-8px) rotate(20deg)}82%{transform:translate(8px,7px) rotate(-15deg)}}@media(prefers-reduced-motion:reduce){.welcome-butterfly,.welcome-wing{animation:none}}
+#windowDialog.window-view{position:fixed;inset:0;z-index:75;padding:0;border:0;background:transparent;border-radius:0;box-shadow:none;overflow:hidden;color:#fff4df;pointer-events:auto;touch-action:manipulation;font-family:system-ui,sans-serif}
+.window-view[hidden],.window-view [hidden]{display:none!important}.window-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.window-frame{position:absolute;inset:0;pointer-events:none;border:clamp(9px,1.7vw,22px) solid #534235;box-shadow:inset 0 0 0 2px #c2a67a,inset 0 0 0 7px #806447,inset 0 0 55px #271b184d;z-index:1}.window-frame:before{content:'';position:absolute;inset:-7px;border:1px solid #ae8b5770;border-radius:2px}.window-frame:after{content:'';position:absolute;left:-15px;right:-15px;bottom:-9px;height:16px;background:linear-gradient(#a1855e,#66513e);box-shadow:0 -2px 0 #d1b88780,0 -6px 20px #37291d33}.window-header{position:absolute;z-index:2;top:max(30px,calc(env(safe-area-inset-top) + 18px));left:clamp(28px,5vw,70px);right:clamp(24px,4vw,58px);display:flex;align-items:flex-start;justify-content:space-between;gap:12px;text-shadow:0 2px 16px #12203499}.window-header p{font-size:9px;letter-spacing:.25em;font-weight:600;margin:0 0 7px;color:#fff1d6}.window-header h1{font:normal clamp(24px,4.5vw,40px)/1.1 Georgia,serif;margin:0;max-width:260px;text-wrap:balance}.window-view button{cursor:pointer;touch-action:manipulation;font:inherit;box-sizing:border-box}.window-header button{border:1px solid #ffebc67a;background:#23303a73;color:#fff4df;border-radius:50%;min-width:44px;height:44px;padding:0;font-size:18px;backdrop-filter:blur(7px)}.window-view button:focus-visible{outline:3px solid #fff2c9;outline-offset:4px}.window-picker{position:absolute;z-index:2;bottom:max(30px,calc(env(safe-area-inset-bottom) + 20px));left:50%;transform:translateX(-50%);width:min(445px,calc(100% - 44px));padding:12px 10px 10px;border:1px solid #e7d5b246;border-radius:18px;background:linear-gradient(145deg,#172b3ed9,#172d35db);backdrop-filter:blur(12px);box-shadow:0 10px 45px #16232b2b;text-align:center}.window-picker>p{margin:0 0 9px;font:12px/1.3 Georgia,serif;letter-spacing:.03em;color:#ecdfc5}.window-picker>span{display:block;margin-top:9px;font-size:9px;letter-spacing:.04em;color:#d6d4c6}#windowThemes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}#windowThemes button{display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;padding:9px 2px 7px;min-height:59px;min-width:0;border:1px solid transparent;border-radius:10px;background:transparent;color:#dfdfd4;font-size:11px;line-height:1.25;transition:background .15s,border-color .15s}#windowThemes svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}#windowThemes button[aria-pressed=true]{background:#d9bd7923;border-color:#e0c38b99;color:#fff0c7}#windowThemes button:hover{background:#f0dec114}@media(max-height:500px){.window-header{top:22px}.window-header h1{font-size:24px}.window-picker{bottom:20px;padding:7px;width:340px;left:auto;right:25px;transform:none}.window-picker>p,.window-picker>span{display:none}#windowThemes button{min-height:50px;padding:6px 2px;font-size:10px}.window-header p{font-size:8px}}
+@media(prefers-reduced-motion:reduce){#windowThemes button{transition:none}}
+
+.window-options{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 2px 10px}.window-options p{font:12px Georgia,serif;margin:0;color:#ecdfc5}.window-time{display:flex;border:1px solid #e2d2b438;border-radius:20px;padding:2px;gap:2px}.window-time button{border:0;background:transparent;color:#d2d6d2;font:11px system-ui;min-height:32px;min-width:50px;border-radius:16px;padding:5px 12px}.window-time button[aria-pressed=true]{background:#d9bd7930;color:#fff0c7}#windowDialog{touch-action:none}.window-picker{touch-action:manipulation}@media(max-height:500px){.window-options{margin-bottom:4px}.window-options p{display:none}.window-options{justify-content:flex-end}.window-time button{min-height:28px;min-width:45px;padding:3px 9px}}
+
 </style></head><body class="studio25 credits23 postcredits23 welcoming">
 <div id="world"></div>
 <section id="welcome" aria-labelledby="welcomeTitle">
@@ -276,18 +267,24 @@ noscript{position:fixed;inset:0;z-index:200;background:#102128;padding:10vh 8vw;
   <div class="welcome-art" aria-hidden="true">
    <div class="sun-disc"></div><div class="orbit-line"></div>
    <svg class="welcome-cat" viewBox="0 0 400 400" fill="none">
-    <path d="M110 313c-75 2-68-94-14-100" stroke="#c7995c" stroke-width="13" stroke-linecap="round"/>
-    <path d="M104 333c-13-45 8-95 39-126 19-18 19-48 20-61l-1-35 31 19 30-9 24-28 7 43c19 23 7 57-18 65-12 4-24 2-31-2-10 19-8 41 4 66l18 62-15 6-25-46-3 47h-22l-12-52-14 51z" fill="#dcad6d"/>
-    <path d="m194 190 43 59 16-4-36-65" fill="#ecc694"/>
-    <path d="m196 168 7-2m26-3 6-2" stroke="#574333" stroke-width="4" stroke-linecap="round"/>
-    <path d="m208 181 5 2 4-5" stroke="#574333" stroke-width="3" stroke-linecap="round"/>
-    <path class="butterfly" d="M280 207c-38-40-48-3-12 13-24 4-6 29 10 3 13 24 34 4 13-3 33-25 6-42-11-13z" fill="#e6d6af"/>
-    <path d="M79 343h205" stroke="#d6ae74" stroke-opacity=".45"/>
-   </svg>
+ <path d="M134 317C69 338 57 265 95 242" stroke="#c7995c" stroke-width="15" stroke-linecap="round"/>
+ <path d="M120 337C103 290 116 251 144 228L158 209L160 163L163 126L193 147L225 143L250 116L251 165C268 192 249 218 225 223L209 232C208 260 221 290 229 337L204 339L183 292L176 339Z" fill="#dcad6d"/>
+ <path d="M169 141L172 162L186 153Z M240 135L229 152L242 155Z" fill="#bb8658"/>
+ <path d="M184 179Q190 172 197 177M222 176Q228 168 235 173" stroke="#4e4035" stroke-width="3.5" stroke-linecap="round"/>
+ <path d="M207 190L213 189L211 194Z" fill="#8e6051"/>
+ <path d="M211 194Q210 201 204 200M211 194Q213 200 219 198" stroke="#725141" stroke-width="2" stroke-linecap="round"/>
+ <path d="M183 195L167 194M184 200L169 204M230 192L246 188M230 198L248 198" stroke="#93663f" stroke-width="1.5" stroke-linecap="round"/>
+ <path d="M129 272L151 282M124 291L147 299M207 309L219 306" stroke="#bd8851" stroke-width="6" stroke-linecap="round"/>
+ <g class="welcome-butterfly">
+  <g class="welcome-wing"><path d="M300 170C273 132 259 141 270 161C277 173 291 176 300 172Z" fill="#d5c4ec"/><path d="M299 173C278 172 270 185 281 191C291 196 299 183 300 175Z" fill="#e7c9a2"/><path d="M294 166L276 150" stroke="#ae92ba" stroke-width="2"/></g>
+  <g class="welcome-wing right"><path d="M301 170C316 131 337 136 330 155C325 171 308 174 301 173Z" fill="#c1d9d0"/><path d="M301 173C321 168 333 178 324 187C314 196 302 184 301 175Z" fill="#d5c4ec"/><path d="M306 166L323 146" stroke="#8db7ad" stroke-width="2"/></g>
+  <path d="M300 163L301 179" stroke="#66526e" stroke-width="3" stroke-linecap="round"/><path d="M300 164Q292 151 289 157M301 164Q306 150 312 154" stroke="#66526e" stroke-width="1.4" stroke-linecap="round"/>
+ </g><path d="M79 343H285" stroke="#d6ae74" stroke-opacity=".45"/>
+ </svg>
    <span class="art-caption">Make yourself at home.</span>
   </div>
  </div>
- <footer class="welcome-footer"><span>A room to explore · <span id="studioVersion">v7.1</span></span><span>Look around. Stay a while.</span></footer>
+ <footer class="welcome-footer"><span>A room to explore · <span id="studioVersion">v10.3.1</span></span><span>Look around. Stay a while.</span></footer>
 </section>
 <section id="chartDialog" class="studio-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="chartTitle">
  <header class="overlay-head"><div><small>THE CHART ON THE WALL</small><h1 id="chartTitle">Patterns & connections</h1></div><button id="closeCharts" aria-label="Close charts">×</button></header>
@@ -346,13 +343,16 @@ noscript{position:fixed;inset:0;z-index:200;background:#102128;padding:10vh 8vw;
 <div class="lyre-frame"><div id="lyreStrings" class="lyre-strings" aria-label="Eight playable strings"></div></div>
 <p id="lyreStatus" class="small-note" role="status">Keyboard: hold A S D F G H J K, then release. Hard plucks have a rougher edge.</p><p class="small-note">The room music softens while the lyre is open. Notes can overlap.</p>
 </section>
-<section id="adventureDialog" class="studio-overlay adventure-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="adventureTitle">
- <header class="overlay-head"><div><small>THE WINDOW</small><h1 id="adventureTitle" tabindex="-1">A little journey</h1></div><button id="closeAdventure" aria-label="Leave the journey">×</button></header>
- <div class="journey-landscape" aria-hidden="true"><span class="journey-sun"></span><span class="journey-hill far"></span><span class="journey-hill near"></span><span class="journey-path"></span><span class="journey-window"></span></div>
- <p id="adventureProgress" class="small-note"></p>
- <div id="adventureBody"></div><div id="adventureChoices" class="adventure-choices"></div>
- <footer class="adventure-footer"><button id="leaveAdventure">Back to the room</button><button id="restartAdventure" hidden>Start again</button><p class="small-note">An original story about choices. Your answers stay in this tab.</p></footer>
+<section id="windowDialog" class="window-view" hidden role="dialog" aria-modal="true" aria-labelledby="windowHeading">
+ <canvas id="windowFallback" class="window-fallback" hidden aria-label="Scenery outside Suncat’s window"></canvas>
+ <div class="window-frame" aria-hidden="true"><i></i></div>
+ <header class="window-header"><div><p>THROUGH THE WINDOW</p><h1 id="windowHeading">Beyond the quiet shore</h1></div><button id="windowClose" aria-label="Return to the room">✕</button></header>
+ <div class="window-picker"><div class="window-options"><p id="windowHint">A different view?</p><div class="window-time" role="group" aria-label="Time of day"><button id="windowDay" aria-pressed="true">Day</button><button id="windowNight" aria-pressed="false">Night</button></div></div><div id="windowThemes" role="group" aria-label="Choose the scenery"></div><span id="windowStatus" role="status" aria-live="polite">Your view for this visit.</span></div>
 </section>
+
+
+
+
 
 <main id="studio25" aria-label="Suncat’s studio" inert>
  <div class="studio-title25"><small>SUNCAT</small><span>Games · Music · Stories</span><em>Drag to look · tap objects</em></div>
@@ -9555,7 +9555,7 @@ const STUDIO_TOPICS25={
  }
 };
 
-STUDIO_TOPICS25.window={label:"Window · A little journey",eyebrow:"THE WINDOW",title:"A little journey",paragraphs:["A few questions and a short walk before nightfall. See what your choices suggest."]};
+STUDIO_TOPICS25.window={label:"Window · The view",eyebrow:"THE WINDOW",title:"A different view",paragraphs:["A quiet lake, falling snow, autumn gold, spring blossoms, or space. Choose a day or night view to keep for this visit."]};
 
 const STUDIO_PROFILE={
  "name": "Suncat",
@@ -9988,9 +9988,9 @@ function gingerCat25(){const g=new T.Group(),body=new T.Group(),head=new T.Group
  const paws=[];for(const side of [-1,1])for(const z of [-1.1,1.5]){const p=new T.Group();p.position.set(side*.77,2.05,z);body.add(p);segment(p,[0,0,0],[0,-1.65,-.12],.34,fur);mesh(p,'smooth',cream,[0,-1.67,-.25],[.41,.3,.58]);paws.push(p);}for(let i=0;i<4;i++)for(const side of [-1,1])mesh(body,'smooth',stripe,[side*1.06,2.7,-.9+i*.65],[.13,.42,.15],[0,0,side*.3]);
  const tail=new T.Group();tail.position.set(0,2.5,2);body.add(tail);const tj=[];let parent=tail;for(let i=0;i<5;i++){const j=new T.Group();if(i)j.position.z=.75;parent.add(j);segment(j,[0,0,0],[0,.12,.8],.26-i*.026,i%2?stripe:fur);tj.push(j);parent=j;}g.userData={body,head,paws,tail:tj};return g;}
 
-function studioButterfly25(){const g=new T.Group(),wings=[];mesh(g,'smooth',0x65516b,[0,0,0],[.10,.12,.7]);for(const side of [-1,1]){const w=new T.Group();g.add(w);mesh(w,'smooth',0xbbb1de,[side*.62,0,-.23],[.68,.05,.64]);mesh(w,'smooth',0xd9c4e3,[side*.48,0,.44],[.5,.05,.47]);mesh(w,'smooth',0xeaddbc,[side*.65,.06,-.3],[.19,.02,.25]);wings.push(w);}g.userData.wings=wings;return g;}
+function studioButterfly25(){const g=new T.Group(),wings=[];mesh(g,'smooth',0x554861,[0,0,0],[.065,.08,.57]);mesh(g,'smooth',0x675a70,[0,.015,-.34],[.09,.09,.09]);for(const side of [-1,1]){const w=new T.Group();g.add(w);const upper=new T.Shape();upper.moveTo(0,-.13);upper.bezierCurveTo(side*.32,-.85,side*1.04,-.76,side*.83,-.22);upper.bezierCurveTo(side*.65,.08,side*.15,.12,0,-.13);const lower=new T.Shape();lower.moveTo(0,.08);lower.bezierCurveTo(side*.58,-.04,side*.87,.39,side*.46,.56);lower.bezierCurveTo(side*.18,.58,side*.04,.24,0,.08);for(const [sh,col]of [[upper,0xc1b1df],[lower,0xe4c39e]]){const gm=new T.ShapeGeometry(sh,12),mm=new T.MeshStandardMaterial({color:col,side:T.DoubleSide,roughness:.8}),m=new T.Mesh(gm,mm);m.rotation.x=-Math.PI/2;w.add(m);}segment(g,[side*.025,.04,-.36],[side*.14,.14,-.57],.012,0x695773);mesh(g,'smooth',0xe9d8ac,[side*.15,.14,-.58],[.032,.032,.032]);wings.push(w);}g.userData.wings=wings;return g;}
 
-function updateStudioCat25(c,t,dt){const cat=c.cat25,u=cat.userData,phase=t%24,play=phase>10&&phase<17,walk=play?Math.sin((phase-10)/7*Math.PI):0;cat.position.set(-1+walk*7,.2,19-Math.sin(walk*1.2)*4);cat.rotation.y=-.4+walk*.6;u.head.rotation.x=-.12-Math.sin(t*.8)*.07;u.head.rotation.y=Math.sin(t*.32)*.19;u.body.position.y=Math.sin(t*1.5)*.025;u.paws.forEach((p,i)=>p.rotation.x=play?Math.sin(t*4+(i%2)*Math.PI)*.21:0);if(phase>13&&phase<15)u.paws[2].rotation.x=-.75*Math.sin((phase-13)/2*Math.PI);u.tail.forEach((j,i)=>{j.rotation.y=Math.sin(t*.7-i*.5)*.16;j.rotation.x=-.15;});const butterfly=c.butterfly25;butterfly.position.set(cat.position.x+2+Math.sin(t*.55)*1.8,5.3+Math.sin(t*.7)*.8,cat.position.z-4+Math.cos(t*.4));butterfly.rotation.y=t*.23;butterfly.userData.wings.forEach((w,i)=>w.rotation.z=(i?1:-1)*Math.sin(t*6)*.7);}
+function updateStudioCat25(c,t,dt){const cat=c.cat25,u=cat.userData,phase=t%24,play=phase>10&&phase<17,walk=play?Math.sin((phase-10)/7*Math.PI):0;cat.position.set(-1+walk*7,.2,19-Math.sin(walk*1.2)*4);cat.rotation.y=-.4+walk*.6;u.head.rotation.x=-.12-Math.sin(t*.8)*.07;u.head.rotation.y=Math.sin(t*.32)*.19;u.body.position.y=Math.sin(t*1.5)*.025;u.paws.forEach((p,i)=>p.rotation.x=play?Math.sin(t*4+(i%2)*Math.PI)*.21:0);if(phase>13&&phase<15)u.paws[2].rotation.x=-.75*Math.sin((phase-13)/2*Math.PI);u.tail.forEach((j,i)=>{j.rotation.y=Math.sin(t*.7-i*.5)*.16;j.rotation.x=-.15;});const butterfly=c.butterfly25;const bt=t%19,rest=bt>15.5,px=cat.position.x+2+Math.sin(t*.55)*1.8,pz=cat.position.z-4+Math.cos(t*.4);butterfly.position.set(px,rest?3.7+Math.sin(t*1.2)*.025:5.3+Math.sin(t*.7)*.65+Math.sin(t*2.1)*.14,pz);butterfly.rotation.set(rest?.12:Math.sin(t*.9)*.17,t*.23+Math.sin(t*.7)*.45,rest?0:Math.sin(t*.55)*.22);butterfly.userData.wings.forEach((w,i)=>w.rotation.z=(i?1:-1)*(rest?.28+Math.sin(t*1.8)*.1:.2+Math.sin(t*(9+Math.sin(t*.5)))*.9));}
 
 function studioTexture25(g,lines,width,height,pos,scale,opts={}){const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;const ctx=canvas.getContext('2d');ctx.fillStyle=opts.bg||'#152632';ctx.fillRect(0,0,width,height);ctx.textAlign=opts.center?'center':'left';for(const [i,line]of lines.entries()){ctx.fillStyle=i===0?(opts.heading||'#eed19a'):(opts.ink||'#98cbb8');ctx.font=(i===0?'bold ':'')+(opts.font||18)+'px '+(opts.serif?'Georgia':'monospace');ctx.fillText(line,opts.center?width/2:22,35+i*(opts.lineHeight||29));}const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;const m=mesh(g,new T.PlaneGeometry(1,1),new T.MeshBasicMaterial({map:tex,side:T.DoubleSide}),pos,scale);m.userData.ownedMaterial=true;m.userData.studioTexture25=tex;return m;}
 
@@ -10007,7 +10007,7 @@ function makeSuncatRoom23(f){
  const laptop=studioGroup25(g,c,'laptop',[0,9.9,-8]);mesh(laptop,'box',0x293b48,[0,0,0],[8,.3,5]);mesh(laptop,'box',0x223342,[0,2.2,-2.2],[8,4.4,.32],[.10,0,0]);for(let i=0;i<4;i++)mesh(laptop,'box',0x758a95,[0,.18,-.8+i*.55],[6,.05,.15]);c.screen25=studioTexture25(laptop,['// one more horizon','function dragonFlight() {','  dream();','  build();','  play();','}'],384,240,[0,2.2,-1.99],[7.45,3.9,1],{font:18});c.screen25.rotation.x=.10;c.screen25.userData.facing25='toward Suncat';
  mesh(g,'cyl',0xd8c09d,[11,10.7,-9],[1,2.1,1]);mesh(g,'cyl',0x46312b,[11,11.78,-9],[.82,.08,.82]);mesh(g,'ring',0xd8c09d,[12.15,10.7,-9],[.65,.75,.5]);
  // A sunset window connects this quiet room with the game's last flight.
- const journeyWindow=mesh(g,'box',mat(0xc79188,{emissive:0x876f89,emissiveIntensity:.32}),[21,24,-35.8],[29,18,.25]);journeyWindow.userData.studioId25='window';c.objects25.window=journeyWindow;for(const x of [6,21,36])mesh(g,'box',0xc0a47b,[x,24,-35.4],[.65,20,.8]);for(const y of [14,34])mesh(g,'box',0xc0a47b,[21,y,-35.4],[31,.65,.8]);c.windowDragons=[];for(let i=0;i<3;i++){const d=creditsDragon23(g,i===0?0:i===1?0x819fbc:0xc69255,.18);d.position.set(11+i*7,24,-34.8);c.windowDragons.push(d);}
+ const journeyWindow=mesh(g,'box',mat(0xc79188,{emissive:0x876f89,emissiveIntensity:.32}),[21,24,-35.8],[29,18,.25]);journeyWindow.userData.studioId25='window';c.objects25.window=journeyWindow;for(const x of [6,21,36])mesh(g,'box',0xc0a47b,[x,24,-35.4],[.65,20,.8]);for(const y of [14,34])mesh(g,'box',0xc0a47b,[21,y,-35.4],[31,.65,.8]);studioWindow.init(journeyWindow,g);
  const guitar=studioGroup25(g,c,'guitar',[-34,6,0]);guitar.rotation.z=-.16;guitar.rotation.y=.8;guitar.scale.setScalar(.7);guitar.position.y=4;mesh(guitar,'smooth',0xb88047,[0,0,0],[3.6,4.6,1]);mesh(guitar,'smooth',0xc28c52,[0,3.2,0],[2.8,3,.9]);mesh(guitar,'cyl',0x312c2a,[0,1,1],[1.1,.12,1.1],[Math.PI/2,0,0]);mesh(guitar,'box',0x755039,[0,10,0],[1.15,12,.65]);mesh(guitar,'box',0x906446,[0,16.5,0],[1.9,2.1,.7]);for(let i=0;i<6;i++)segment(guitar,[-.35+i*.14,-2,1.1],[-.35+i*.14,17,.4],.023,0xe3c49a);
  const lyre=studioGroup25(g,c,'lyre',[26,6,43]);mesh(g,'box',0x79604a,[26,2.4,43],[9,5,7]);mesh(lyre,'smooth',0xb38348,[0,0,0],[3.2,1.5,1]);for(const side of [-1,1]){segment(lyre,[side*2,0,0],[side*3.2,7,0],.38,0xd3ac69);mesh(lyre,'ball',0xe6c47f,[side*3.2,7,0],[.5,.5,.5]);}segment(lyre,[-3.2,7,0],[3.2,7,0],.35,0xd3ac69);for(let i=-2;i<=2;i++)segment(lyre,[i,.2,.15],[i,7,.15],.035,0xf3deb0);
  makeWoodenSword(g,c); makeGameConsole(g,c);
@@ -10175,7 +10175,26 @@ const studioExplorer=(()=>{
  async function request(payload,signal,structured=false){let response;try{response=await fetch(endpoint+'/studio/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal,credentials:'omit',cache:'no-store'});}catch(e){if(e.name!=='AbortError')connection('Offline','Connection lost. Tap to reconnect.');throw e;}if(response.status>=500||[401,403,404].includes(response.status))connection('Offline','The host could not answer. Tap to reconnect.');let data;try{data=await response.json();}catch{throw Error('The server did not return a studio response.');}if(!response.ok)throw Error(data.error||'The AI server could not answer.');if(structured)return data;if(typeof data.text!=='string')throw Error('The server returned an empty answer.');return data.text;}
  async function send(text){if(busy)return;const q=text.trim();if(!q)return;busy=true;const epoch=chatEpoch;$('sendChat').disabled=true;message('user',q);$('chatInput').value='';const prior=history.slice(-10);history.push({role:'user',text:q});try{let answer;if(remote){chatAbort=new AbortController();const timer=setTimeout(()=>chatAbort?.abort('timeout'),65000);try{answer=await request({message:q,history:prior,context:chatChartContext?questionContext(q,true):currentDetail?{selected:currentDetail}:null},chatAbort.signal);}finally{clearTimeout(timer);}}else answer=personalAnswer(q)||(chatChartContext?(studioReadings.local(questionContext(q),q)||localSummary()):localAnswer(q));if(epoch!==chatEpoch)return;message('model',answer);history.push({role:'model',text:answer});history=history.slice(-12);}catch(e){if(epoch===chatEpoch)message('model','Online host unavailable. '+(chatChartContext?(studioReadings.local(questionContext(q),q)||localSummary()):localAnswer(q)));}finally{if(epoch===chatEpoch){busy=false;$('sendChat').disabled=false;}}}
  function connection(state,note=''){remote=state==='Online';for(const id of ['connectStudio','chartConnection']){const b=$(id);b.textContent='● '+state;b.dataset.state=state.toLowerCase();b.disabled=state==='Connecting';b.title=note||'Tap to reconnect';} $('connectionStatus').textContent=note;$('chatMode').textContent=remote?'AI host · public notes, chart questions, and room conversation.':'Local guide ready · '+state.toLowerCase()+'.';}
- async function connect(){const epoch=++connectEpoch;connectAbort?.abort();connectAbort=new AbortController();connection('Connecting','The host may need a moment to wake up. Local tools are ready.');const timer=setTimeout(()=>connectAbort?.abort('timeout'),75000);try{const r=await fetch(endpoint+'/studio/health',{cache:'no-store',credentials:'omit',signal:connectAbort.signal}),data=await r.json();if(!r.ok||data.service!=='suncat-studio'||!data.ready)throw Error('The host is unavailable. Tap Offline to reconnect.');if(epoch===connectEpoch)connection('Online','Connected. Tap Online to check the connection again.');}catch(e){if(epoch===connectEpoch)connection('Offline','The local guide and charts still work. Tap Offline to reconnect.');}finally{clearTimeout(timer);}}
+ function connectionNote(error){
+  if(navigator.onLine===false)return 'Your device is offline. The local guide and charts still work.';
+  if(error?.name==='AbortError'||error?.name==='TimeoutError'||error==='timeout')return 'The host did not respond in time. Tap Offline to try again.';
+  if(location.origin==='null'||['file:','content:'].includes(location.protocol))return 'This downloaded copy could not connect. The AI host accepts the published website; open the Studio on suncatmeow.github.io to use AI. The local guide and charts still work here.';
+  return error?.studioMessage||'Could not reach the AI host. Check your connection and tap Offline to retry. The local guide and charts still work.';
+ }
+ async function connect(){
+  const epoch=++connectEpoch;connectAbort?.abort();const controller=new AbortController();connectAbort=controller;
+  if(!endpoint){connection('Offline','The AI host address has not been configured. The local guide and charts still work.');return;}
+  if(navigator.onLine===false){connection('Offline',connectionNote());return;}
+  connection('Connecting','The host may need a moment to wake up. Local tools are ready.');
+  const timer=setTimeout(()=>controller.abort(),75000);
+  try{
+   const r=await fetch(endpoint.replace(/\/+$/,'')+'/studio/health',{cache:'no-store',credentials:'omit',signal:controller.signal});
+   const data=await r.json().catch(()=>null);
+   if(!r.ok||data?.service!=='suncat-studio'||!data.ready){const error=new Error('Host unavailable');error.studioMessage=r.status===403?'This website is not enabled for the AI host. The site address needs to be added to the server’s allowed origins.':r.status===429?'The host is busy. Please try again shortly.':r.ok&&data?.service==='suncat-studio'&&!data.ready?'The server is online, but its AI is not configured. The local guide and charts still work.':'The AI host is temporarily unavailable. Tap Offline to try again.';throw error;}
+   if(epoch===connectEpoch)connection('Online','Connected. Tap Online to check the connection again.');
+  }catch(e){if(epoch===connectEpoch)connection('Offline',connectionNote(e));}
+  finally{clearTimeout(timer);}
+ }
  window.addEventListener('offline',()=>{connectEpoch++;connectAbort?.abort();connection('Offline','Your device is offline. Local tools still work.');});window.addEventListener('online',connect);
  function clearConversations(){readingEpoch++;busyReading(false);chatEpoch++;chatAbort?.abort();readingAbort?.abort();busy=false;$('sendChat').disabled=false;history=[];readingHistory={};lastPeriodQuestion='';$('chatMessages').replaceChildren();$('chatInput').value='';}
  $('chatForm').onsubmit=e=>{e.preventDefault();send($('chatInput').value);};$('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send($('chatInput').value);}});$('chatSuggestions').onclick=e=>{const b=e.target.closest('[data-ask]');if(b)send(b.dataset.ask);};$('clearChat').onclick=clearConversations;$('closeChat').onclick=closeChat;$('connectStudio').onclick=connect;$('chartConnection').onclick=connect;
@@ -10208,7 +10227,7 @@ const studioExplorer=(()=>{
  for(const item of STUDIO_PROFILE.conversationStarters){const b=document.createElement('button');b.type='button';b.textContent=item.question;b.onclick=()=>send(item.question);$('personalQuestionList').append(b);}
  document.addEventListener('keydown',e=>{const active=!result.hidden?result:!chat.hidden?chat:!charts.hidden?charts:null;if(!active)return;if(e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();if(active===result)closeResult();else if(active===chat)closeChat();else close();}if(e.key==='Tab'){const list=[...active.querySelectorAll('button,input,select,textarea,summary,a,[tabindex="0"]')].filter(el=>!el.disabled&&!el.closest('[hidden]')&&!(el.closest('details:not([open])')&&el.tagName!=='SUMMARY'));const first=list[0],last=list.at(-1);if(e.shiftKey&&(document.activeElement===first||document.activeElement===$('resultTitle'))){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}},true);
  if(endpoint)connect();
- return{open,close,openChat,closeChat,closeResult,isOpen:()=>!charts.hidden||!chat.hidden,localAnswer,questionContext,askReading,placeController,getState:()=>({tab,selection:$('readingPerson').value,host,hostIsSuncat,gemHost,gemName,castQuestion,remote,visitor,hostChart,guestChart,hostBazi,guestBazi,castResult}),setTab};
+ return{open,close,openChat,closeChat,closeResult,readAdventure:(message,signal)=>request({message,history:[],context:null},signal),isOpen:()=>!charts.hidden||!chat.hidden,localAnswer,questionContext,askReading,placeController,getState:()=>({tab,selection:$('readingPerson').value,host,hostIsSuncat,gemHost,gemName,castQuestion,remote,visitor,hostChart,guestChart,hostBazi,guestBazi,castResult}),setTab};
 })();
 
 const studioLyre=(()=>{
@@ -10240,68 +10259,143 @@ const studioLyre=(()=>{
  return{open,close,isOpen:()=>!dialog.hidden,samples,get voices(){return voices.length;},get held(){return pointers.size;}};
 })();
 
-// A small, local story. The reading uses only the choices made during this journey.
-const studioAdventure=(()=>{
- const box=$('adventureDialog'),body=$('adventureBody'),choices=$('adventureChoices');
- let node='intro',answers=[],time=3,lastFocus=null;
- const archetypes={
-  Maker:{strength:'You tend to turn concern into something you can do with your hands. A small repair can matter more to you than a fine explanation.',tension:'The thing you can fix may absorb all your attention. A worthwhile task can still cost a promise somewhere else.'},
-  Seeker:{strength:'You look for what lies beneath the first explanation. Questions and unfinished stories draw your attention.',tension:'An answer is not always yours to take. Curiosity can run ahead of someone else’s boundaries, or of the time you meant to give another task.'},
-  Guardian:{strength:'You keep track of what people are relying on you for. Care takes the form of showing up, lending a hand, or protecting a confidence.',tension:'Two responsibilities can ask for you at once. Keeping every promise may be impossible; choosing one need not mean the other did not matter.'},
-  Wanderer:{strength:'You leave room for a day to surprise you. An unexpected path can be worth taking even when it produces nothing you can bring home.',tension:'A passing invitation can pull you away from an earlier intention. Freedom feels different when someone else is waiting.'}
+// The window is scenery. Its choice lives only for this page visit.
+const studioWindow=(()=>{
+ const box=$('windowDialog'),fallbackCanvas=$('windowFallback'),themes={
+  lake:{label:'Lake',title:'Beyond the quiet shore',sky:['#566984','#c59c9e','#f4d5ab'],mountains:['#aaa1b2','#888c9d','#647d86'],water:['#a5b1b7','#687d81'],land:'#3b5c59',leaf:['#56766b','#738872','#879677'],glow:0xe5bca3,icon:'<path d="M2 13l6-8 5 7 4-5 5 6M2 17q3-2 6 0t6 0t6 0M2 21q3-2 6 0t6 0t6 0"/>'},
+  snow:{label:'Snow',title:'A softer kind of silence',sky:['#7f9baa','#c5d6da','#eceddf'],mountains:['#c5d3da','#a5bac4','#8ba8b4'],water:['#c3dadd','#9cbbc5'],land:'#e2e7df',leaf:['#6f9393','#93acab','#bac9c2'],glow:0xbcdcea,icon:'<path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 4l3 3 3-3M9 20l3-3 3 3M3 10l4-1 1-4M16 19l1-4 4-1M3 14l4 1 1 4M16 5l1 4 4 1"/>'},
+  autumn:{label:'Autumn',title:'The gold before evening',sky:['#849395','#d7b695','#f4d5a0'],mountains:['#bbb0aa','#a29d93','#7e8980'],water:['#c8c2a2','#849991'],land:'#756843',leaf:['#a45f3c','#c58643','#ddb564'],glow:0xe5bf7d,icon:'<path d="M19 3C8 2 3 8 5 15c4 6 15 3 14-12zM3 22L16 7M8 15h6M12 11V7"/>'},
+  spring:{label:'Spring',title:'Everything begins again',sky:['#78a8b5','#c5dadd','#f5e9c9'],mountains:['#b7c8c8','#94b3b5','#6f9996'],water:['#b3d4cc','#789f98'],land:'#769068',leaf:['#deacaf','#edc3bd','#f6dacf'],glow:0xdde0bc,icon:'<path d="M12 9C7 2 15 0 15 6c7-3 9 4 3 6 7 4 1 10-3 5-1 8-9 5-6-1-7 2-8-6-2-6-2-6 5-8 5-1z"/><circle cx="12" cy="12" r="2"/>'},
+  space:{label:'Space',title:'A little farther from home',glow:0x958eca,icon:'<ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(-30 12 12)"/><path d="M6 10a6 6 0 0110-3m2 6a6 6 0 01-10 4"/><path d="M19 2v3m-1.5-1.5h3"/>'}
  };
- const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const has=id=>answers.some(a=>a.id===id);
- function choose(id,text,points,next,cost=0){answers.push({id,text,points});time-=cost;node=next;render();}
- function button(label,fn){const b=document.createElement('button');b.type='button';b.textContent=label;b.onclick=fn;choices.append(b);}
- function question(text,options){body.innerHTML='<p>'+esc(text)+'</p>';for(const o of options)button(o.label,()=>choose(o.id,o.evidence,o.points,o.next,o.cost||0));}
- function outcome(){const parts=[];
-  if(has('repair'))parts.push('You mended the cart’s loose axle. The traveler could continue alone, but the repair used most of the daylight.');
-  if(has('push'))parts.push('You helped push the cart to the shelter. The traveler was out of the road, although the broken axle still needed repair.');
-  if(has('promise'))parts.push('You told the traveler where to find shelter and continued with the borrowed book. You kept your time, but did not find out whether they reached the shelter.');
-  if(has('music'))parts.push('You followed the music to a clearing and listened until the players finished. You learned the tune, and lost track of the fading light.');
-  if(has('hum'))parts.push('You carried a little of the tune with you, humming as you walked toward the house.');
-  if(has('ignore'))parts.push('You let the music fade behind you and kept your attention on the path.');
-  if(has('sealed'))parts.push('You left the sealed letter at the house without opening it. Its story remained someone else’s.');
-  if(has('read'))parts.push('You opened the letter and found a private apology. You learned why the writer was worried, but the recipient could see that its seal was broken.');
-  if(has('leave'))parts.push('You placed the letter on a dry stone beside the path. You do not know whether its owner found it.');
-  parts.push(time>0?'You arrived before nightfall. The owner thanked you for returning the book as promised.':'You reached the house after nightfall. The owner had gone. You left the book in the sheltered return box, with a note explaining the delay.');return parts;
+ let theme='lake',night=false,view=null,cam=null,target=null,screen=null,glow=null,particles=null,planet=null,moon=null,shooting=null;
+ let fullTexture=null,previewTexture=null,previewCanvas=null,particleMaps={},clock=0,lastPreview=-1,dirty=true,focusBefore=null,oldRatio=1,cameraBefore=null,fullAspect=0,foreground=null,foregroundFull=null,foregroundPreview=null,foregroundFullCanvas=null,foregroundPreviewCanvas=null,hemi=null,sunlight=null,waterGlints=null,lean={x:0,y:0},aim={x:0,y:0},pointer=null,lastRoomEye=null;
+ const nights={
+  lake:{title:'Moonlight on the lake',sky:['#101b31','#263852','#5b667b'],mountains:['#46516a','#34485e','#243d50'],water:['#667c8e','#283f55'],land:'#182e31',leaf:['#263f40','#37534d','#4b6354'],glow:0x7796b8},
+  snow:{title:'Snow beneath the moon',sky:['#152338','#354b65','#738698'],mountains:['#697d93','#526e87','#425f79'],water:['#8ba3b4','#435f77'],land:'#a2b7c5',leaf:['#375764','#4b6c77','#73939e'],glow:0x8baaca},
+  autumn:{title:'Gold in the blue hour',sky:['#151b31','#303a53','#666579'],mountains:['#5f6071','#4d5464','#394b55'],water:['#768183','#3a505b'],land:'#383c30',leaf:['#674535','#876144','#a58252'],glow:0x9d9aaa},
+  spring:{title:'Blossoms after dark',sky:['#192137','#3d4562','#78788f'],mountains:['#6a7288','#52677b','#385869'],water:['#80999e','#3e626c'],land:'#354d43',leaf:['#947985','#b897a3','#d4b5bf'],glow:0xa9a5c8},
+  space:{title:'The far side of the light',glow:0x6e80a8}
+ };
+ const palette=(key,dark=night)=>dark?{...themes[key],...nights[key]}:themes[key];
+ const rand=n=>{const x=Math.sin(n*127.1+311.7)*43758.5453123;return x-Math.floor(x);};
+ const cvTexture=canvas=>{const t=new T.CanvasTexture(canvas);t.colorSpace=T.SRGBColorSpace;return t;};
+ function paintBackdrop(canvas,key,w,h,dark=night,layer='all'){
+  canvas.width=w;canvas.height=h;const c=canvas.getContext('2d'),p=palette(key,dark),front=layer==='foreground',back=layer==='backdrop';
+  const circle=(x,y,r,color)=>{c.fillStyle=color;c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fill();};
+  const glowAt=(x,y,r,color)=>{const g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,color);g.addColorStop(1,color.slice(0,7)+'00');c.fillStyle=g;c.fillRect(x-r,y-r,r*2,r*2);};
+  if(key==='space'){if(front)return;
+   const bg=c.createLinearGradient(0,0,w,h);bg.addColorStop(0,dark?'#030715':'#0d1428');bg.addColorStop(.5,dark?'#090f22':'#182037');bg.addColorStop(1,dark?'#1c1b32':'#392843');c.fillStyle=bg;c.fillRect(0,0,w,h);
+   c.save();c.translate(w*.48,h*.44);c.rotate(-.45);c.scale(1,.40);glowAt(0,0,Math.max(w,h)*.65,'#67536d90');glowAt(w*.20,0,Math.max(w,h)*.37,'#56739170');c.restore();
+   for(let i=0;i<650;i++){const x=rand(i+1)*w,y=rand(i+2100)*h,r=(i%19===0?1.4:.35+rand(i+48)*.65)*w/850;circle(x,y,r,i%7?'#ddd9ce':'#a8c6e0');if(i%97===0){c.strokeStyle='#fff5dc65';c.lineWidth=.6;c.beginPath();c.moveTo(x-r*5,y);c.lineTo(x+r*5,y);c.moveTo(x,y-r*5);c.lineTo(x,y+r*5);c.stroke();}}
+  }else{
+   if(!front){
+   const sky=c.createLinearGradient(0,0,0,h*.74);p.sky.forEach((color,i)=>sky.addColorStop(i/2,color));c.fillStyle=sky;c.fillRect(0,0,w,h);
+   const sunX=w*.70,sunY=h*.32,sunR=Math.min(w,h)*.045;glowAt(sunX,sunY,sunR*5,dark?'#d4e9ff58':key==='snow'?'#ffffff64':'#ffe5bba0');circle(sunX,sunY,sunR,dark?'#e4edf0':key==='snow'?'#f8f6df':'#fff0cc');
+   if(dark){for(let i=0;i<180;i++){const x=rand(i+2)*w,y=rand(i+200)*h*.42;if(Math.hypot(x-sunX,y-sunY)<sunR*1.4)continue;circle(x,y,(.4+rand(i+89)*.6)*w/700,'#e2eaf1a8');}circle(sunX-sunR*.23,sunY+sunR*.20,sunR*.19,'#9cafc33b');circle(sunX+sunR*.34,sunY-sunR*.25,sunR*.12,'#9cafc32b');}
+   for(let i=0;i<13;i++){c.save();c.translate(rand(i+321)*w,h*(.18+rand(i+77)*.24));c.scale(1,.08);glowAt(0,0,w*(.18+rand(i+400)*.15),dark?'#b4c1d31b':'#f5e1cf42');c.restore();}
+   function ridge(level,color){c.fillStyle=color;c.beginPath();c.moveTo(-10,h);for(let i=0;i<=90;i++){const x=i/90*w;const y=h*(.47+level*.042-.043*Math.sin(i*.15+level*2)-.046*Math.sin(i*.36+level)-.010*Math.sin(i*.81));c.lineTo(x,y);}c.lineTo(w+10,h);c.closePath();c.fill();}
+   p.mountains.forEach((col,i)=>ridge(i,col));
+   const water=c.createLinearGradient(0,h*.61,0,h);water.addColorStop(0,p.water[0]);water.addColorStop(1,p.water[1]);c.fillStyle=water;c.fillRect(0,h*.62,w,h*.38);
+   for(let i=0;i<100;i++){const y=h*(.63+rand(i+600)*.35),x=rand(i+812)*w,len=(.012+rand(i+78)*.08)*w;c.strokeStyle=dark?(i%3?'#d5eaf020':'#d5eaf03d'):(i%3?'#edf2d91d':'#e8d5ad39');c.lineWidth=.5+rand(i+533);c.beginPath();c.moveTo(x,y);c.lineTo(x+len,y);c.stroke();}
+   }
+   if(!back){
+   c.fillStyle=p.land;c.beginPath();c.moveTo(0,h*.64);c.bezierCurveTo(w*.37,h*.68,w*.14,h*.76,w*.28,h);c.lineTo(0,h);c.closePath();c.fill();
+   c.beginPath();c.moveTo(w,h*.61);c.bezierCurveTo(w*.64,h*.68,w*.89,h*.81,w*.70,h);c.lineTo(w,h);c.closePath();c.fill();
+   function tree(x,y,size,seed){
+    c.strokeStyle=dark?'#384450':key==='snow'?'#596b6e':'#675e48';c.lineWidth=Math.max(.8,size*.065);c.beginPath();c.moveTo(x,y);c.lineTo(x-size*.04,y-size*.88);c.stroke();
+    if(key==='snow'||key==='lake'){
+     for(let j=0;j<6;j++){const yy=y-size*(.30+j*.12),r=size*(.34-j*.045);c.fillStyle=p.leaf[(j+seed)%3];c.beginPath();c.moveTo(x-r,yy);c.quadraticCurveTo(x-r*.3,yy-size*.15,x,yy-size*.32);c.quadraticCurveTo(x+r*.4,yy-size*.14,x+r,yy);c.closePath();c.fill();if(key==='snow'){c.fillStyle=dark?'#bcccd6':'#e8ece4';c.beginPath();c.moveTo(x-r*.80,yy-size*.055);c.lineTo(x,yy-size*.32);c.lineTo(x+r*.78,yy-size*.06);c.quadraticCurveTo(x+r*.2,yy-size*.14,x-r*.80,yy-size*.055);c.fill();}}
+    }else{
+     for(let j=0;j<8;j++){const a=j*2.4,xx=x+Math.cos(a)*size*.23,yy=y-size*(.65+rand(seed+j+60)*.3);c.strokeStyle=dark?'#4c4850':'#71634c';c.lineWidth=size*.028;c.beginPath();c.moveTo(x,y-size*.4);c.lineTo(xx,yy);c.stroke();circle(xx,yy,size*(.17+rand(seed+j)*.12),p.leaf[j%3]);for(let k=0;k<9;k++)circle(xx+(rand(seed+j*17+k)*2-1)*size*.19,yy+(rand(seed+j*23+k+30)*2-1)*size*.19,size*.035,p.leaf[(j+k+1)%3]);}
+    }
+   }
+   for(let side=0;side<2;side++)for(let i=0;i<22;i++){const depth=i/22,x=w*(side?1-.11*rand(i+990):.13*rand(i+49)),y=h*(.66+depth*.43),size=Math.min(w,h)*(.035+depth*.24);tree(x,y,size,i+side*43);}
+   if(key==='spring')for(let i=0;i<90;i++){const side=i%2,x=w*(side?.8+rand(i+63)*.2:rand(i+13)*.20),y=h*(.84+rand(i+24)*.16);circle(x,y,Math.min(w,h)*.002, dark?(i%3?'#aaa7b6':'#a283a4'):(i%3?'#e8d3b1':'#d3a5b7'));}
+   if(key==='snow'){c.fillStyle=dark?'#c1d0d9':'#f1f2e7';c.beginPath();c.moveTo(0,h*.98);c.quadraticCurveTo(w*.08,h*.88,w*.25,h);c.lineTo(0,h);c.fill();}
+  }
+  }
+  if(front)return;
+  const vignette=c.createRadialGradient(w*.5,h*.42,Math.min(w,h)*.3,w*.5,h*.5,Math.max(w,h)*.85);vignette.addColorStop(0,'transparent');vignette.addColorStop(1,'#10212950');c.fillStyle=vignette;c.fillRect(0,0,w,h);
  }
- function result(){const scores={Maker:0,Seeker:0,Guardian:0,Wanderer:0};for(const a of answers)for(const[k,v]of Object.entries(a.points))scores[k]+=v;const ranked=Object.entries(scores).sort((a,b)=>b[1]-a[1]);const [kind,top]=ranked[0],second=ranked[1];return{kind,second:second[1]>0?second[0]:null,tied:top===second[1],scores,evidence:answers.map(a=>a.text),outcome:outcome(),...archetypes[kind]};}
- function render(){choices.replaceChildren();$('restartAdventure').hidden=node==='intro';$('adventureTitle').textContent=node==='result'?'What your choices suggest':node==='intro'?'A little journey':node.startsWith('voice')?'A voice at the window':'Before nightfall';$('adventureProgress').textContent=node==='intro'?'About 3 minutes · optional · no sign-in':node==='result'?'Your journey is complete':node.startsWith('voice')?'A few questions before the road':'The road · '+Math.max(0,time)+' stretches of daylight left';
-  if(node==='intro'){body.innerHTML='<p>A path winds away from the window. Somewhere beyond it, a voice asks whether you have a moment.</p><p>A few questions. A borrowed book. A short walk before nightfall. At the end, see what your choices suggest.</p><p class="journey-note">There is no best ending. Choose what you would actually do. You can leave at any time.</p>';button('Take a look',()=>{node='voice1';render();});}
-  else if(node==='voice1')question('“If something puzzled you, would you stop to understand it, even with somewhere else to be?”',[
-   {label:'Yes',id:'curious',evidence:'You said you would stop for something you did not understand.',points:{Seeker:1},next:'voice2'},
-   {label:'No',id:'focused',evidence:'You said you would keep your destination in mind.',points:{Guardian:1},next:'voice2'}]);
-  else if(node==='voice2')question(has('curious')?'“Could you leave that question unanswered to keep a promise?”':'“Would you change your plan if someone along the way needed help?”',has('curious')?[
-   {label:'Yes',id:'answerwait',evidence:'You said a promise could be worth leaving a question unanswered.',points:{Guardian:1},next:'voice3'},
-   {label:'No',id:'answerfirst',evidence:'You said an unfinished question would be hard to leave behind.',points:{Seeker:1},next:'voice3'}]:[
-   {label:'Yes',id:'flexible',evidence:'You said someone else’s need could change your plan.',points:{Guardian:1},next:'voice3'},
-   {label:'No',id:'ownpath',evidence:'You said you would prefer to keep to your own plan.',points:{Wanderer:1},next:'voice3'}]);
-  else if(node==='voice3')question('“When something breaks, is your first impulse to try mending it yourself?”',[
-   {label:'Yes',id:'mend',evidence:'You said your first impulse was to try a repair yourself.',points:{Maker:1},next:'cart'},
-   {label:'No',id:'consider',evidence:'You said you would not immediately attempt a repair yourself.',points:{Seeker:1},next:'cart'}]);
-  else if(node==='cart')question('You promised to return a borrowed book before nightfall. There are three stretches of daylight left. At a fork, a traveler’s cart has a loose axle. A shelter stands nearby. They ask whether you can help.',[
-   {label:'Try to mend the axle · takes two stretches',id:'repair',evidence:'You repaired the cart, spending most of your remaining daylight.',points:{Maker:4,Guardian:1},next:'music',cost:2},
-   {label:'Help push it to the shelter · takes one stretch',id:'push',evidence:'You helped the traveler reach shelter without attempting the repair.',points:{Guardian:3},next:'music',cost:1},
-   {label:'Point out the shelter and keep your promise',id:'promise',evidence:'You gave directions and continued to return the book on time.',points:{Guardian:2},next:'music'}]);
-  else if(node==='music')question((has('repair')?'The cart rolls again. Your hands are dusty. ':has('push')?'The traveler reaches the shelter and waves goodbye. ':'You take the path toward the book’s owner. ')+'Music reaches you from a clearing away from the road. You have '+Math.max(0,time)+' stretches of daylight left.',[
-   {label:'Follow it and listen to the whole tune · takes two stretches',id:'music',evidence:'You left the road to listen to an unfamiliar tune, using two stretches of daylight.',points:{Wanderer:4,Seeker:1},next:'letter',cost:2},
-   {label:'Pick up the melody while I keep walking',id:'hum',evidence:'You carried the melody into your walk without taking the detour.',points:{Maker:2,Wanderer:1},next:'letter'},
-   {label:'Keep my attention on getting the book home',id:'ignore',evidence:'You let the music pass so you could stay focused on the promise.',points:{Guardian:2},next:'letter'}]);
-  else if(node==='letter')question('Near the house, you find a sealed letter on the path. The name on it is the book owner’s. You could return it without ever knowing what it says.',[
-   {label:'Deliver it unopened with the book',id:'sealed',evidence:'You returned a letter without opening it.',points:{Guardian:2},next:'result'},
-   {label:'Read it before I return it',id:'read',evidence:'You opened the private letter before returning it.',points:{Seeker:4},next:'result'},
-   {label:'Set it somewhere dry and leave it for its owner',id:'leave',evidence:'You left the letter on a dry stone instead of taking it along.',points:{Wanderer:2},next:'result'}]);
-  else if(node==='result'){const r=result();body.innerHTML='<div class="journey-outcome">'+r.outcome.map(p=>'<p>'+esc(p)+'</p>').join('')+'</div><div class="journey-reading"><h2>'+esc(r.kind)+'</h2><p class="journey-note">'+(r.tied?'A close reading: '+esc(r.second)+' is equally present in these choices.':r.second?'With a little of the '+esc(r.second)+'.':'')+'</p><p><strong>A strength.</strong> '+esc(r.strength)+'</p><p><strong>A tension.</strong> '+esc(r.tension)+'</p><p class="journey-note">This describes the choices you made in one story. It is an invitation to reflect, not a fixed definition of you.</p><details><summary>Which choices led here?</summary><ul class="journey-evidence">'+r.evidence.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><p class="journey-note">Actions carry more weight than the opening answers. Repair points toward Maker; curiosity toward Seeker; commitments and care toward Guardian; detours and independence toward Wanderer. Close results can fit more than one name.</p></details></div>';button('Try another path',restart);}
-  box.scrollTop=0;$('adventureTitle').focus({preventScroll:true});
+ function ensure(){
+  if(view)return;view=new T.Scene();cam=new T.PerspectiveCamera(44,1,.1,300);cam.position.set(0,8,48);cam.lookAt(0,5,0);
+  hemi=new T.HemisphereLight(0xf1e8dd,0x627b86,2);view.add(hemi);sunlight=new T.DirectionalLight(0xffdec0,2.1);sunlight.position.set(-16,26,30);view.add(sunlight);
+  previewCanvas=document.createElement('canvas');previewTexture=cvTexture(previewCanvas);fullTexture=cvTexture(fallbackCanvas);
+  target=new T.WebGLRenderTarget(640,400,{depthBuffer:true,stencilBuffer:false});target.texture.colorSpace=T.SRGBColorSpace;
+  foregroundFullCanvas=document.createElement('canvas');foregroundPreviewCanvas=document.createElement('canvas');foregroundFull=cvTexture(foregroundFullCanvas);foregroundPreview=cvTexture(foregroundPreviewCanvas);
+  foreground=new T.Mesh(new T.PlaneGeometry(1,1),new T.MeshBasicMaterial({map:foregroundPreview,transparent:true,depthWrite:false,toneMapped:false}));foreground.quaternion.copy(cam.quaternion);foreground.renderOrder=3;view.add(foreground);
+  const wg=new T.BufferGeometry();wg.setAttribute('position',new T.BufferAttribute(new Float32Array(84*6),3));waterGlints=new T.LineSegments(wg,new T.LineBasicMaterial({color:0xf4e5bd,transparent:true,opacity:.23,depthWrite:false}));waterGlints.renderOrder=1;view.add(waterGlints);
+  const positions=new Float32Array(150*3);for(let i=0;i<150;i++){positions[i*3]=(rand(i+1)-.5)*46;positions[i*3+1]=rand(i+711)*37-11;positions[i*3+2]=rand(i+136)*27-7;}
+  const pg=new T.BufferGeometry();pg.setAttribute('position',new T.BufferAttribute(positions,3));const dot=document.createElement('canvas');dot.width=32;dot.height=32;const dc=dot.getContext('2d'),dg=dc.createRadialGradient(16,16,2,16,16,15);dg.addColorStop(0,'#fff');dg.addColorStop(.5,'#ffffffe0');dg.addColorStop(1,'#ffffff00');dc.fillStyle=dg;dc.fillRect(0,0,32,32);
+  particleMaps.snow=cvTexture(dot);for(const kind of ['autumn','spring']){const leaf=document.createElement('canvas');leaf.width=32;leaf.height=32;const lc=leaf.getContext('2d');lc.fillStyle='#fff';lc.beginPath();if(kind==='autumn'){lc.moveTo(7,27);lc.bezierCurveTo(0,10,15,2,28,3);lc.bezierCurveTo(29,17,22,29,7,27);}else{lc.moveTo(8,26);lc.bezierCurveTo(-3,12,10,0,17,6);lc.bezierCurveTo(30,1,36,23,8,26);}lc.fill();particleMaps[kind]=cvTexture(leaf);}
+  particles=new T.Points(pg,new T.PointsMaterial({map:particleMaps.snow,color:0xffffff,size:.13,transparent:true,opacity:.8,depthWrite:false,sizeAttenuation:true}));view.add(particles);
+  const planetCanvas=document.createElement('canvas');planetCanvas.width=512;planetCanvas.height=256;const pc=planetCanvas.getContext('2d');for(let y=0;y<256;y++){const hue=28+Math.sin(y*.048)*7,light=48+Math.sin(y*.16)*7+Math.sin(y*.05)*11;pc.fillStyle=`hsl(${hue} 27% ${light}%)`;pc.fillRect(0,y,512,1);}const planetMap=cvTexture(planetCanvas);
+  planet=new T.Group();view.add(planet);const globe=new T.Mesh(new T.SphereGeometry(5.5,48,32),new T.MeshStandardMaterial({map:planetMap,roughness:1}));planet.add(globe);
+  const ring=new T.Mesh(new T.RingGeometry(7.2,10.8,100,6),new T.MeshBasicMaterial({color:0xc5baa0,side:T.DoubleSide,transparent:true,opacity:.50,depthWrite:false}));ring.rotation.x=1.17;ring.rotation.y=.24;planet.add(ring);planet.rotation.z=-.34;
+  moon=new T.Mesh(new T.SphereGeometry(1.1,24,16),new T.MeshStandardMaterial({color:0xb9c7cd,roughness:1}));view.add(moon);
+  const lineGeometry=new T.BufferGeometry().setFromPoints([new V(),new V()]);shooting=new T.Line(lineGeometry,new T.LineBasicMaterial({color:0xdce6ed,transparent:true,opacity:.8}));view.add(shooting);
+  applyTheme();
  }
- function restart(){node='intro';answers=[];time=3;render();}
- function open(){if(!enteredRoom)enterRoom(false);lastFocus=document.activeElement;closeStudioCard25(false);$('studioObjects25').hidden=true;$('studioExplore25').setAttribute('aria-expanded','false');$('studio25').inert=true;$('greeting').hidden=true;film.greeted=true;box.hidden=false;roomAudio.select('books');if(roomReady){film.cast23.inspect25='window';film.cameraCut24=true;}render();}
- function close(){box.hidden=true;$('studio25').inert=false;if(roomReady)film.cast23.inspect25=null;const target=lastFocus?.isConnected&&!lastFocus.closest('[hidden]')?lastFocus:$('studioExplore25');target.focus({preventScroll:true});}
- $('closeAdventure').onclick=close;$('leaveAdventure').onclick=close;$('restartAdventure').onclick=restart;
- document.addEventListener('keydown',e=>{if(box.hidden)return;if(e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();close();}if(e.key==='Tab'){const all=[...box.querySelectorAll('button,summary')].filter(x=>!x.closest('[hidden]')&&!x.disabled);if(e.shiftKey&&(document.activeElement===all[0]||document.activeElement===$('adventureTitle'))){e.preventDefault();all.at(-1)?.focus();}else if(!e.shiftKey&&document.activeElement===all.at(-1)){e.preventDefault();all[0]?.focus();}}},true);
- return{open,close,isOpen:()=>!box.hidden,getState:()=>({node,time,answers:answers.map(a=>({...a})),result:node==='result'?result():null})};
+ function init(surface,parent){ensure();screen=surface;surface.material=new T.MeshBasicMaterial({map:target.texture,toneMapped:false});surface.userData.ownedMaterial=true;glow=new T.PointLight(palette(theme).glow,night?.22:.40,52,2);glow.position.set(21,24,-30);parent.add(glow);dirty=true;}
+ function paintFull(){if(!view)return;fullAspect=innerWidth/innerHeight;const ratio=Math.min(devicePixelRatio||1,1.5),w=Math.min(1600,Math.round(innerWidth*ratio)),h=Math.min(1800,Math.round(innerHeight*ratio));paintBackdrop(fallbackCanvas,theme,w,h,night,'backdrop');fullTexture.needsUpdate=true;paintBackdrop(foregroundFullCanvas,theme,w,h,night,'foreground');foregroundFull.needsUpdate=true;if(!roomReady)paintBackdrop(fallbackCanvas,theme,w,h,night,'all');}
+ function applyTheme(){
+  if(!view)return;paintBackdrop(previewCanvas,theme,960,600,night,'backdrop');previewTexture.needsUpdate=true;paintBackdrop(foregroundPreviewCanvas,theme,960,600,night,'foreground');foregroundPreview.needsUpdate=true;paintFull();
+  foreground.visible=waterGlints.visible=theme!=='space';planet.visible=moon.visible=theme==='space';particles.visible=['snow','autumn','spring'].includes(theme);particles.material.color.setHex(theme==='autumn'?0xe7b468:theme==='spring'?0xf4ced9:0xffffff);particles.material.size=theme==='snow'?.13:theme==='spring'?.21:.30;particles.material.map=particleMaps[theme]||particleMaps.snow;
+  hemi.intensity=night?.38:2;sunlight.intensity=night?1.05:2.1;sunlight.color.setHex(night?0xb8d4ff:0xffdec0);sunlight.position.set(night?-40:-16,night?18:26,night?-28:30);particles.material.opacity=night?.65:.8;waterGlints.material.color.setHex(night?0xcfe7ff:0xffecc3);
+  shooting.visible=false;if(glow){glow.color.setHex(palette(theme).glow);glow.intensity=night?.22:.40;}dirty=true;sync();
+ }
+ function sync(){
+  $('windowHeading').textContent=palette(theme).title;for(const b of $('windowThemes').children)b.setAttribute('aria-pressed',String(b.dataset.theme===theme));
+  $('windowStatus').textContent=themes[theme].label+' · '+(night?'Night':'Day')+' · Your view for this visit.';$('windowDay').setAttribute('aria-pressed',String(!night));$('windowNight').setAttribute('aria-pressed',String(night));
+ }
+ function select(key){if(!themes[key]||key===theme)return;theme=key;ensure();applyTheme();if(roomReady){animate(0);preview(renderer,true);if(!box.hidden)render(renderer);}}
+ function setNight(value){if(night===!!value)return;night=!!value;ensure();applyTheme();if(roomReady){preview(renderer,true);if(!box.hidden)render(renderer);}}
+ function animate(dt){
+  if(!view)return;clock+=reduced?0:dt;const t=clock;
+  planet.position.set(0,7,-15);planet.rotation.y=t*.014;moon.position.set(-9,13,-28);
+  if(particles.visible&&!reduced){const arr=particles.geometry.attributes.position.array;for(let i=0;i<150;i++){arr[i*3]+=(.25+Math.sin(t*.3+i)*.13)*dt;arr[i*3+1]-=(theme==='snow'?.65:.42)*(1+rand(i+83))*dt;if(arr[i*3+1]<-11)arr[i*3+1]=26;if(arr[i*3]>23)arr[i*3]=-23;}particles.geometry.attributes.position.needsUpdate=true;}
+  const mix=1-Math.exp(-dt*5);lean.x+=(aim.x-lean.x)*mix;lean.y+=(aim.y-lean.y)*mix;waterGlints.material.opacity=(night?.19:.12)+(reduced?0:Math.sin(t*.65)*.04);
+  const phase=t%19;shooting.visible=theme==='space'&&!reduced&&phase>14&&phase<14.9;if(shooting.visible){const p=shooting.geometry.attributes.position,a=(phase-14)/.9;p.setXYZ(0,-15+a*22,21-a*8,-22);p.setXYZ(1,-12+a*22,20-a*8,-22);p.needsUpdate=true;shooting.material.opacity=Math.sin(a*Math.PI)*.8;}
+ }
+ function prepareView(aspect,previewMode=false){
+  cam.aspect=aspect;cam.updateProjectionMatrix();
+  const x=previewMode&&camera?clamp((camera.position.x-21)*.025,-.8,.8):lean.x,y=previewMode&&camera?clamp((camera.position.y-24)*.018,-.35,.35):lean.y;
+  cam.position.set(x,8+y,48);cam.lookAt(x*.12,5+y*.12,0);
+  const direction=new V(0,-3,-48).normalize(),anchor=new V(0,8,48),up=new V(0,1,0).addScaledVector(direction,-new V(0,1,0).dot(direction)).normalize();
+  const distance=36,height=2*distance*Math.tan(22*Math.PI/180)*1.08;
+  foreground.position.copy(anchor).addScaledVector(direction,distance);foreground.scale.set(height*aspect,height,1);foreground.material.map=previewMode?foregroundPreview:foregroundFull;
+  const positions=waterGlints.geometry.attributes.position;
+  for(let i=0;i<84;i++){const u=.32+rand(i+913)*.37,v=.64+rand(i+146)*.34,depth=50-((v-.64)/.34)*16,h=2*depth*Math.tan(22*Math.PI/180),point=anchor.clone().addScaledVector(direction,depth).add(new V((u-.5)*h*aspect,0,0)).addScaledVector(up,(.5-v)*h),length=(.008+rand(i+788)*.030)*h*aspect,slide=reduced?0:Math.sin(clock*.28+i)*length*.2;positions.setXYZ(i*2,point.x+slide,point.y,point.z);positions.setXYZ(i*2+1,point.x+length+slide,point.y,point.z);}
+  positions.needsUpdate=true;view.background=previewMode?previewTexture:fullTexture;
+ }
+ function preview(r,force=false){
+  if(!view||!screen||!r)return;if(!force&&!dirty&&(reduced||clock-lastPreview<.1))return;
+  const oldTarget=r.getRenderTarget(),oldAspect=cam.aspect,oldBackground=view.background,oldAuto=r.autoClear,viewport=r.getViewport(new T.Vector4()),scissor=r.getScissor(new T.Vector4()),scissorTest=r.getScissorTest(),xr=r.xr?.enabled;
+  try{if(r.xr)r.xr.enabled=false;r.autoClear=true;prepareView(1.6,true);r.setRenderTarget(target);r.setScissorTest(false);r.clear();r.render(view,cam);lastPreview=clock;dirty=false;}
+  finally{r.setRenderTarget(oldTarget);r.setViewport(viewport);r.setScissor(scissor);r.setScissorTest(scissorTest);r.autoClear=oldAuto;if(r.xr)r.xr.enabled=xr;cam.aspect=oldAspect;cam.updateProjectionMatrix();view.background=oldBackground;}
+ }
+ function update(dt,r){ensure();animate(dt);if(box.hidden){if(camera){const p=camera.position;if(!lastRoomEye||lastRoomEye.distanceTo(p)>.3){dirty=true;lastRoomEye=p.clone();}}preview(r);}}
+ function render(r){if(!view)return;prepareView(innerWidth/innerHeight);r.render(view,cam);}
+ function open(){
+  if(!box.hidden)return;aim={x:0,y:0};lean={x:0,y:0};if(!enteredRoom)enterRoom(false);ensure();focusBefore=document.activeElement;
+  closeStudioCard25(false);studioExplorer.closeResult(false);$('studioObjects25').hidden=true;$('studioExplore25').setAttribute('aria-expanded','false');$('studioHover25').hidden=true;$('greeting').hidden=true;film.greeted=true;
+  if(roomReady){const c=film.cast23;cameraBefore={manual:c.manual251,yaw:c.lookYaw251,height:c.lookHeight251};c.hover25=null;c.inspect25=null;oldRatio=renderer.getPixelRatio();renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));}
+  $('studio25').inert=true;$('studio25').style.visibility='hidden';box.hidden=false;fallbackCanvas.hidden=roomReady;paintFull();sync();if(roomReady){animate(0);render(renderer);}$('windowClose').focus({preventScroll:true});
+ }
+ function close(){
+  if(box.hidden)return;pointer=null;aim={x:0,y:0};box.hidden=true;$('studio25').inert=false;$('studio25').style.visibility='';
+  if(roomReady){renderer.setPixelRatio(oldRatio);const c=film.cast23;if(cameraBefore){c.manual251=cameraBefore.manual;c.lookYaw251=cameraBefore.yaw;c.lookHeight251=cameraBefore.height;}c.inspect25=null;film.cameraCut24=true;preview(renderer,true);}
+  (focusBefore?.isConnected?focusBefore:$('studioExplore25')).focus({preventScroll:true});
+ }
+ function resize(){if(!view)return;if(!box.hidden&&Math.abs(fullAspect-innerWidth/innerHeight)>.001)paintFull();dirty=true;}
+ for(const [key,p]of Object.entries(themes)){const button=document.createElement('button');button.type='button';button.dataset.theme=key;button.setAttribute('aria-pressed',String(key===theme));button.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+p.icon+'</svg><span>'+p.label+'</span>';button.onclick=()=>select(key);$('windowThemes').append(button);}
+ $('windowClose').onclick=close;$('windowDay').onclick=()=>setNight(false);$('windowNight').onclick=()=>setNight(true);
+ box.addEventListener('pointerdown',e=>{if(e.target.closest('button,.window-picker'))return;pointer={id:e.pointerId,x:e.clientX,y:e.clientY,baseX:aim.x,baseY:aim.y};box.setPointerCapture(e.pointerId);});
+ box.addEventListener('pointermove',e=>{if(box.hidden||reduced)return;if(pointer&&pointer.id===e.pointerId){aim.x=clamp(pointer.baseX-(e.clientX-pointer.x)*.007,-1.2,1.2);aim.y=clamp(pointer.baseY+(e.clientY-pointer.y)*.004,-.6,.6);}else if(e.pointerType==='mouse'&&!e.target.closest('button,.window-picker')){aim.x=(e.clientX/innerWidth-.5)*1.4;aim.y=(.5-e.clientY/innerHeight)*.65;}});
+ for(const event of ['pointerup','pointercancel','lostpointercapture'])box.addEventListener(event,()=>{pointer=null;});
+ window.addEventListener('keydown',e=>{if(box.hidden)return;if(e.key==='Escape'){e.preventDefault();close();return;}if(e.key==='Tab'){const controls=[$('windowClose'),$('windowDay'),$('windowNight'),...$('windowThemes').children],i=controls.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();controls.at(-1).focus();}else if(!e.shiftKey&&i===controls.length-1){e.preventDefault();controls[0].focus();}}if(['ArrowLeft','ArrowRight'].includes(e.key)&&document.activeElement?.dataset?.theme){e.preventDefault();const keys=Object.keys(themes),i=keys.indexOf(theme),next=keys[(i+(e.key==='ArrowRight'?1:4))%keys.length];select(next);[...$('windowThemes').children].find(b=>b.dataset.theme===next).focus();}});
+ return{init,open,close,select,setNight,update,render,resize,isOpen:()=>!box.hidden,getState:()=>({theme,night})};
 })();
 
 function shotCamera(position,aim,dt){const blend=film.cameraReady?(reduced?1:1-Math.exp(-dt*3)):1;film.cameraReady=true;camera.position.lerp(position,blend);cameraAim.lerp(aim,blend);camera.up.set(0,1,0);camera.lookAt(cameraAim);camera.updateMatrixWorld();}
@@ -10316,7 +10410,7 @@ function updateRoom(dt){
  if(c.inspect25&&c.objects25[c.inspect25]){const target=c.objects25[c.inspect25],box=new T.Box3().setFromObject(target),at=box.getCenter(new V()),size=box.getSize(new V()),distance=clamp(Math.max(size.y*2,size.x*1.8),25,55),inward=new V(-at.x,0,10-at.z).normalize(),right=new V(inward.z,0,-inward.x);focus.copy(at).addScaledVector(right,phone?0:8);focus.y-=phone?distance*.22:0;eye.copy(focus).addScaledVector(inward,distance);eye.y+=distance*.22;if(c.inspect25==='laptop')eye.x+=phone?15:9;eye.x=clamp(eye.x,-36,36);eye.z=clamp(eye.z,-31,60);eye.y=clamp(eye.y,6,34);}
  if(c.inspect25==='cat'){const at=c.cat25.position.clone().add(new V(.5,3,-1)),offset=new V(-14,8,-10),right=new V(offset.z,0,-offset.x).normalize();eye.copy(at).add(offset);focus.copy(at);if(phone)focus.y-=5.3;else focus.addScaledVector(right,8);}
  manualRoomCamera251(c,eye,focus);creditCamera24(film,eye,focus,dt);
- for(const[i,d]of c.windowDragons.entries()){d.position.x=11+i*7+(reduced?0:Math.sin(t*.18)*3);d.position.y=24+(reduced?0:Math.sin(t+i)*.8);if(!reduced)animateCreature(d,t+i);}
+ studioWindow.update(dt,renderer);
  if(c.hover25&&c.objects25[c.hover25]){const at=new T.Box3().setFromObject(c.objects25[c.hover25]).getCenter(new V());c.highlight25.position.copy(at).add(new V(0,2,3));c.highlight25.intensity=.9;}else c.highlight25.intensity=0;
  if(t>3&&!film.greeted){film.greeted=true;$('greeting').hidden=false;}if(t>16)$('greeting').hidden=true;
 }
@@ -10332,7 +10426,8 @@ function enterRoom(withMusic=false,projects=false){
 $('enterMusic').onclick=()=>enterRoom(true);$('enterQuiet').onclick=()=>enterRoom(false);$('browseProjects').onclick=()=>enterRoom(false,true);$('soundButton').onclick=()=>roomAudio.toggle();
 function closeStudioCard25(restore=true){card.hidden=true;document.body.classList.remove('studio-card25');$('studioHover25').hidden=true;if(roomReady)film.cast23.inspect25=null;if(restore)(returnFocus?.isConnected?returnFocus:$('studioExplore25')).focus({preventScroll:true});}
 function openStudioObject25(id){
- if(id==='window'){studioAdventure.open();return;}
+ if(id==='window'){studioWindow.open();return;}
+ if(studioWindow.isOpen())studioWindow.close();
  if(id==='charts'){studioExplorer.open();return;}
  if(id==='suncat'){studioExplorer.openChat();return;}
  roomAudio.select(id);
@@ -10355,7 +10450,7 @@ const objectIds=['laptop','lyre','guitar','console','sword','bow','books','degre
 for(const id of objectIds){const b=document.createElement('button');b.textContent=STUDIO_TOPICS25[id].label;b.onclick=()=>openStudioObject25(id);nav.append(b);}
 $('studioExplore25').onclick=()=>{const opening=nav.hidden;closeStudioCard25(false);nav.hidden=!opening;$('studioExplore25').setAttribute('aria-expanded',String(opening));if(opening)nav.firstElementChild.focus();};
 window.addEventListener('keydown',e=>{
- if(!enteredRoom||studioExplorer.isOpen()||studioLyre.isOpen()||studioAdventure.isOpen())return;
+ if(!enteredRoom||studioExplorer.isOpen()||studioLyre.isOpen()||studioWindow.isOpen())return;
  if(e.code==='Escape'){if(!card.hidden){e.preventDefault();closeStudioCard25();}else if(!nav.hidden){e.preventDefault();nav.hidden=true;$('studioExplore25').setAttribute('aria-expanded','false');$('studioExplore25').focus();}else $('greeting').hidden=true;}
  else if(e.code==='Tab'&&!card.hidden){const focus=[...card.querySelectorAll('button,a')],first=focus[0],last=focus[focus.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}
  else if(enteredRoom&&roomReady&&card.hidden&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();const c=film.cast23;if(!c.manual251){c.manual251=true;c.lookYaw251=Math.atan2(camera.position.x/36,(camera.position.z-10)/46);c.lookHeight251=clamp(camera.position.y,12,32);}c.lookYaw251+=(e.key==='ArrowLeft'?.13:-.13);$('greeting').hidden=true;}
@@ -10370,12 +10465,12 @@ function wirePointer(){
  canvas.addEventListener('pointercancel',()=>{press=null;canvas.style.cursor='grab';});canvas.addEventListener('lostpointercapture',()=>press=null);
 }
 function fallback(){roomReady=false;document.body.classList.add('fallback');$('fallback').hidden=false;$('world').hidden=true;$('studioReset251').hidden=true;openStudioObject25('laptop');}
-let last=0,frame=null;function tick(now){frame=null;if(document.hidden||!roomReady)return;if(now-last<1000/(reduced?15:30)){frame=requestAnimationFrame(tick);return;}const dt=Math.min((now-(last||now-16))/1000,.06);last=now;worldTime+=dt;updateRoom(dt);renderer.render(scene,camera);frame=requestAnimationFrame(tick);}
+let last=0,frame=null;function tick(now){frame=null;if(document.hidden||!roomReady)return;if(now-last<1000/(reduced?15:30)){frame=requestAnimationFrame(tick);return;}const dt=Math.min((now-(last||now-16))/1000,.06);last=now;worldTime+=dt;if(studioWindow.isOpen()){studioWindow.update(dt,renderer);studioWindow.render(renderer);}else{updateRoom(dt);renderer.render(scene,camera);}frame=requestAnimationFrame(tick);}
 function resume(){if(!frame&&!document.hidden&&roomReady){last=0;frame=requestAnimationFrame(tick);}}
-function resize(){if(!roomReady)return;renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();film.cameraCut24=true;updateRoom(0);renderer.render(scene,camera);}
+function resize(){if(!roomReady)return;renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();film.cameraCut24=true;if(studioWindow.isOpen()){studioWindow.resize();studioWindow.render(renderer);}else{updateRoom(0);renderer.render(scene,camera);}}
 try{
  const low=matchMedia('(pointer:coarse)').matches||innerWidth<750;
- renderer=new T.WebGLRenderer({antialias:false,alpha:false,powerPreference:'low-power'});renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.shadowMap.autoUpdate=false;renderer.shadowMap.enabled=!low;renderer.shadowMap.needsUpdate=true;renderer.setPixelRatio(Math.min(devicePixelRatio||1,low?1:1.5));
+ renderer=new T.WebGLRenderer({antialias:true,alpha:false,powerPreference:'default'});renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.shadowMap.autoUpdate=false;renderer.shadowMap.enabled=!low;renderer.shadowMap.needsUpdate=true;renderer.setPixelRatio(Math.min(devicePixelRatio||1,low?1:1.5));
  renderer.domElement.setAttribute('aria-label','Suncat’s three-dimensional studio. Use Explore the room to select its objects.');$('world').append(renderer.domElement);
  scene=new T.Scene();scene.background=new T.Color(0x19252d);scene.fog=new T.Fog(0xc0b6b2,600,1800);camera=new T.PerspectiveCamera(64,innerWidth/innerHeight,.5,2600);
  // The room retains Dragonflight's materials, exposure, light strengths, and local lamps.
